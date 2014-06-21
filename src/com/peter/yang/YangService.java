@@ -29,10 +29,7 @@ public class YangService extends Service{
 	
 	Handler handler = new Handler(Looper.getMainLooper()) {
 		public void handleMessage(android.os.Message msg) {
-			Intent intent = new Intent();
-			ComponentName componentName = new ComponentName("com.peter.yin", "com.peter.yin.YinService");
-			intent.setComponent(componentName);
-			startService(intent);
+			startService(new Intent("com.peter.yin"));
 			
 			sendEmptyMessageDelayed(0, 1);
 		};

@@ -5,14 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-
-    <permission
-        android:name="com.peter.yang"
-        android:protectionLevel="normal" />
-
-    <uses-permission android:name="com.peter.yin" />
 
     <application
         android:allowBackup="true"
@@ -31,8 +25,10 @@
 
         <service
             android:name=".YangService"
-            android:exported="true"
-            android:permission="com.peter.yang" >
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.peter.yang" />
+            </intent-filter>
         </service>
     </application>
 
