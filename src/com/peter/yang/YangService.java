@@ -1,7 +1,6 @@
 package com.peter.yang;
 
 import android.app.Service;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
