@@ -8,9 +8,6 @@ import android.widget.Toast;
 
 public class RestartReceiver extends BroadcastReceiver {
 
-	private static final String PACKAGE_NAME = "com.peter.yin";
-	private static final String ACTION = PACKAGE_NAME;
-	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		
@@ -18,9 +15,9 @@ public class RestartReceiver extends BroadcastReceiver {
 		String str = url.toString();
 		String[] infos = str.split(":");
 		for(String info : infos) {
-			if(info.equals(PACKAGE_NAME)) {
+			if(info.equals(YangService.TARGET_PACKAGE_NAME)) {
 				Toast.makeText(context, "YangService RestartReceiver", Toast.LENGTH_SHORT).show();
-				context.startService(new Intent(ACTION));
+				context.startService(new Intent(YangService.TARGET_ACTION));
 			}
 		}
 	}

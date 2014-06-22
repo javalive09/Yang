@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 public class YangService extends Service{
 
+	public static final String TARGET_PACKAGE_NAME = "com.peter.yin";
+	public static final String TARGET_ACTION = "com.peter.yin";
+	
 	@Override
 	public IBinder onBind(Intent intent) {
 		return null;
@@ -39,10 +42,10 @@ public class YangService extends Service{
 	
 	Handler mHandler = new Handler(Looper.getMainLooper()) {
 		public void handleMessage(Message msg) {
-			boolean serviceRunning = serviceRunning(YangService.this, "com.peter.yin");
+			boolean serviceRunning = serviceRunning(YangService.this, TARGET_PACKAGE_NAME);
 			if(!serviceRunning) {
 				Toast.makeText(YangService.this, "yin not Running", Toast.LENGTH_SHORT).show();
-				startService(new Intent("com.peter.yin"));
+				startService(new Intent(TARGET_ACTION));
 				sendEmptyMessageDelayed(0, 5000);
 			}
 		};
