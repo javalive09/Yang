@@ -20,9 +20,8 @@ public class YangService extends Service{
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		super.onStartCommand(intent, flags, startId);
 		Toast.makeText(this, "YangService onStartCommand()", Toast.LENGTH_SHORT).show();
-		return START_STICKY;
+		return START_NOT_STICKY;
 	}
 	
 	@Override
